@@ -10,11 +10,18 @@ body {
 }
 
 #left-wheel, #right-wheel {
-  -webkit-animation: wheel-rotation 1.5s linear 0s infinite forwards;
-          animation: wheel-rotation 1.5s linear 0s infinite forwards;
+  -webkit-animation: wheel-rotation 5.5s linear 0s infinite forwards;
+          animation: wheel-rotation 5.5s linear 0s infinite forwards;
   -webkit-transform-origin: center;
           transform-origin: center;
   transform-box: fill-box;
+}
+
+#boy {
+  -webkit-animation: bike 1s ease-in-out 0s infinite alternate;
+          animation: bike 1s ease-in-out 0s infinite alternate;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
 }
 
 @-webkit-keyframes wheel-rotation {
@@ -36,6 +43,28 @@ body {
   100% {
     -webkit-transform: rotateZ(360deg);
             transform: rotateZ(360deg);
+  }
+}
+
+@-webkit-keyframes bike {
+  0% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+  100% {
+    -webkit-transform: rotateX(20deg);
+            transform: rotateX(20deg);
+  }
+}
+
+@keyframes bike {
+  0% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+  100% {
+    -webkit-transform: rotateX(20deg);
+            transform: rotateX(20deg);
   }
 }
 /*# sourceMappingURL=main.css.map */

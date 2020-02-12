@@ -10,10 +10,15 @@ body{
 }
 
 #left-wheel, #right-wheel {
-    animation: wheel-rotation 1.5s linear 0s infinite forwards;
+    animation: wheel-rotation 5.5s linear 0s infinite forwards;
     transform-origin: center;
     transform-box: fill-box;
 
+}
+
+#boy {
+    animation: bike 1s ease-in-out 0s infinite alternate;
+    transform-origin: bottom;
 }
 
 @keyframes wheel-rotation {
@@ -23,5 +28,15 @@ body{
 
     100% {
         transform: rotateZ(360deg);
+    }
+}
+
+@keyframes bike {
+    0% {
+        transform: rotateX(0deg);
+    }
+
+    100% {
+        transform: rotateX(20deg);
     }
 }

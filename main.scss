@@ -9,17 +9,26 @@ body{
     text-align: center;
 }
 
-#left-wheel, #right-wheel {
-    animation: wheel-rotation 5.5s linear 0s infinite forwards;
+#hat {
+    animation: hat 1s linear 0s infinite alternate;
     transform-origin: center;
     transform-box: fill-box;
-
 }
 
 #boy {
     animation: bike 1s ease-in-out 0s infinite alternate;
     transform-origin: bottom;
 }
+
+
+#left-wheel, #right-wheel {
+    animation: wheel-rotation 1.5s linear 0s infinite forwards;
+    transform-origin: center;
+    transform-box: fill-box;
+
+}
+
+
 
 @keyframes wheel-rotation {
     0% {
@@ -38,5 +47,16 @@ body{
 
     100% {
         transform: rotateX(20deg);
+    }
+}
+
+
+@keyframes hat {
+    0% {
+        transform: translateY(0%) rotateZ(10deg) rotateX(0deg);
+    }
+
+    100% {
+        transform: translateY(50%) rotateZ(0deg) rotateX(20deg);
     }
 }

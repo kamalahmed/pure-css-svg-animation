@@ -9,9 +9,9 @@ body {
   text-align: center;
 }
 
-#left-wheel, #right-wheel {
-  -webkit-animation: wheel-rotation 5.5s linear 0s infinite forwards;
-          animation: wheel-rotation 5.5s linear 0s infinite forwards;
+#hat {
+  -webkit-animation: hat 1s linear 0s infinite alternate;
+          animation: hat 1s linear 0s infinite alternate;
   -webkit-transform-origin: center;
           transform-origin: center;
   transform-box: fill-box;
@@ -22,6 +22,14 @@ body {
           animation: bike 1s ease-in-out 0s infinite alternate;
   -webkit-transform-origin: bottom;
           transform-origin: bottom;
+}
+
+#left-wheel, #right-wheel {
+  -webkit-animation: wheel-rotation 1.5s linear 0s infinite forwards;
+          animation: wheel-rotation 1.5s linear 0s infinite forwards;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  transform-box: fill-box;
 }
 
 @-webkit-keyframes wheel-rotation {
@@ -65,6 +73,28 @@ body {
   100% {
     -webkit-transform: rotateX(20deg);
             transform: rotateX(20deg);
+  }
+}
+
+@-webkit-keyframes hat {
+  0% {
+    -webkit-transform: translateY(0%) rotateZ(10deg) rotateX(0deg);
+            transform: translateY(0%) rotateZ(10deg) rotateX(0deg);
+  }
+  100% {
+    -webkit-transform: translateY(50%) rotateZ(0deg) rotateX(20deg);
+            transform: translateY(50%) rotateZ(0deg) rotateX(20deg);
+  }
+}
+
+@keyframes hat {
+  0% {
+    -webkit-transform: translateY(0%) rotateZ(10deg) rotateX(0deg);
+            transform: translateY(0%) rotateZ(10deg) rotateX(0deg);
+  }
+  100% {
+    -webkit-transform: translateY(50%) rotateZ(0deg) rotateX(20deg);
+            transform: translateY(50%) rotateZ(0deg) rotateX(20deg);
   }
 }
 /*# sourceMappingURL=main.css.map */

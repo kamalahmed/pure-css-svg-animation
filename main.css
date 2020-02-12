@@ -24,12 +24,66 @@ body {
           transform-origin: bottom;
 }
 
-#left-wheel, #right-wheel {
+#left-wheel,
+#right-wheel {
   -webkit-animation: wheel-rotation 1.5s linear 0s infinite forwards;
           animation: wheel-rotation 1.5s linear 0s infinite forwards;
   -webkit-transform-origin: center;
           transform-origin: center;
   transform-box: fill-box;
+}
+
+#canvas {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+
+#street {
+  width: 100%;
+  max-height: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+#bicycle {
+  position: absolute;
+  left: 30%;
+  bottom: -10px;
+  height: 300px;
+  width: 300px;
+  z-index: 99;
+}
+
+#left-tree, #right-tree {
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+  transform-box: fill-box;
+}
+
+#left-tree {
+  -webkit-animation: left-nodding 1s ease-in-out 0s infinite alternate;
+          animation: left-nodding 1s ease-in-out 0s infinite alternate;
+}
+
+#right-tree {
+  -webkit-animation: right-nodding 1s ease-in-out 0s infinite alternate;
+          animation: right-nodding 1s ease-in-out 0s infinite alternate;
+}
+
+#cloud1, #cloud2 {
+  -webkit-animation: cloud 2s ease-in-out 0s infinite alternate;
+          animation: cloud 2s ease-in-out 0s infinite alternate;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+}
+
+#cloud3 {
+  -webkit-animation: cloudbig 5s ease-in-out 0s infinite alternate;
+          animation: cloudbig 5s ease-in-out 0s infinite alternate;
+  -webkit-transform-origin: left;
+          transform-origin: left;
 }
 
 @-webkit-keyframes wheel-rotation {
@@ -95,6 +149,94 @@ body {
   100% {
     -webkit-transform: translateY(50%) rotateZ(0deg) rotateX(20deg);
             transform: translateY(50%) rotateZ(0deg) rotateX(20deg);
+  }
+}
+
+@-webkit-keyframes left-nodding {
+  from {
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+  to {
+    -webkit-transform: rotateZ(4deg);
+            transform: rotateZ(4deg);
+  }
+}
+
+@keyframes left-nodding {
+  from {
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+  to {
+    -webkit-transform: rotateZ(4deg);
+            transform: rotateZ(4deg);
+  }
+}
+
+@-webkit-keyframes right-nodding {
+  from {
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+  to {
+    -webkit-transform: rotateZ(-4deg);
+            transform: rotateZ(-4deg);
+  }
+}
+
+@keyframes right-nodding {
+  from {
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+  to {
+    -webkit-transform: rotateZ(-4deg);
+            transform: rotateZ(-4deg);
+  }
+}
+
+@-webkit-keyframes cloud {
+  from {
+    -webkit-transform: rotateY(-10deg) rotateZ(0deg);
+            transform: rotateY(-10deg) rotateZ(0deg);
+  }
+  to {
+    -webkit-transform: rotateY(8deg) rotateZ(-4deg);
+            transform: rotateY(8deg) rotateZ(-4deg);
+  }
+}
+
+@keyframes cloud {
+  from {
+    -webkit-transform: rotateY(-10deg) rotateZ(0deg);
+            transform: rotateY(-10deg) rotateZ(0deg);
+  }
+  to {
+    -webkit-transform: rotateY(8deg) rotateZ(-4deg);
+            transform: rotateY(8deg) rotateZ(-4deg);
+  }
+}
+
+@-webkit-keyframes cloudbig {
+  from {
+    -webkit-transform: rotateX(-2deg) rotateZ(0deg);
+            transform: rotateX(-2deg) rotateZ(0deg);
+  }
+  to {
+    -webkit-transform: rotateX(10deg) rotateZ(-10deg);
+            transform: rotateX(10deg) rotateZ(-10deg);
+  }
+}
+
+@keyframes cloudbig {
+  from {
+    -webkit-transform: rotateX(-2deg) rotateZ(0deg);
+            transform: rotateX(-2deg) rotateZ(0deg);
+  }
+  to {
+    -webkit-transform: rotateX(10deg) rotateZ(-10deg);
+            transform: rotateX(10deg) rotateZ(-10deg);
   }
 }
 /*# sourceMappingURL=main.css.map */

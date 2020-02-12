@@ -1,62 +1,141 @@
 // reset
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    text-align: center;
+body {
+  text-align: center;
 }
 
 #hat {
-    animation: hat 1s linear 0s infinite alternate;
-    transform-origin: center;
-    transform-box: fill-box;
+  animation: hat 1s linear 0s infinite alternate;
+  transform-origin: center;
+  transform-box: fill-box;
 }
 
 #boy {
-    animation: bike 1s ease-in-out 0s infinite alternate;
-    transform-origin: bottom;
+  animation: bike 1s ease-in-out 0s infinite alternate;
+  transform-origin: bottom;
+}
+
+#left-wheel,
+#right-wheel {
+  animation: wheel-rotation 1.5s linear 0s infinite forwards;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+#canvas {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+#street {
+  width: 100%;
+  max-height: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+#bicycle {
+  position: absolute;
+  left: 30%;
+  bottom: -10px;
+  height: 300px;
+  width: 300px;
+  z-index: 99;
 }
 
 
-#left-wheel, #right-wheel {
-    animation: wheel-rotation 1.5s linear 0s infinite forwards;
-    transform-origin: center;
+
+#left-tree, #right-tree {
+    transform-origin: bottom;
     transform-box: fill-box;
 
 }
+#left-tree{
+    animation: left-nodding 1s ease-in-out 0s infinite alternate;
+}
+ #right-tree {
+    animation: right-nodding 1s ease-in-out 0s infinite alternate;
+}
 
+#cloud1, #cloud2{
+animation: cloud 2s ease-in-out 0s infinite alternate;
+    transform-origin: left;
 
+}
+#cloud3{
+animation: cloudbig 5s ease-in-out 0s infinite alternate;
+    transform-origin: left;
+
+}
+// Animation
 
 @keyframes wheel-rotation {
-    0% {
-        transform: rotateZ(0deg);
-    }
+  0% {
+    transform: rotateZ(0deg);
+  }
 
-    100% {
-        transform: rotateZ(360deg);
-    }
+  100% {
+    transform: rotateZ(360deg);
+  }
 }
 
 @keyframes bike {
-    0% {
-        transform: rotateX(0deg);
-    }
+  0% {
+    transform: rotateX(0deg);
+  }
 
-    100% {
-        transform: rotateX(20deg);
-    }
+  100% {
+    transform: rotateX(20deg);
+  }
 }
 
-
 @keyframes hat {
-    0% {
-        transform: translateY(0%) rotateZ(10deg) rotateX(0deg);
-    }
+  0% {
+    transform: translateY(0%) rotateZ(10deg) rotateX(0deg);
+  }
 
-    100% {
-        transform: translateY(50%) rotateZ(0deg) rotateX(20deg);
-    }
+  100% {
+    transform: translateY(50%) rotateZ(0deg) rotateX(20deg);
+  }
+}
+
+@keyframes left-nodding {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(4deg);
+  }
+}
+
+@keyframes right-nodding {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(-4deg);
+  }
+}
+
+@keyframes cloud {
+  from {
+    transform: rotateY(-10deg) rotateZ(0deg);
+  }
+  to {
+    transform: rotateY(8deg) rotateZ(-4deg);
+  }
+}
+
+@keyframes cloudbig {
+  from {
+    transform: rotateX(-2deg) rotateZ(0deg);
+  }
+  to {
+    transform: rotateX(10deg) rotateZ(-10deg);
+  }
 }
